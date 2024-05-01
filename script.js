@@ -26,12 +26,12 @@ const handleStartButtonClick = () => {
   intervalID = setInterval(() => {
     if (seconds != 59) {
       seconds++;
-      console.log("seconds");
+    //   console.log("seconds");
       secondsElement.innerText = seconds.toString().padStart(2, "0");
     } else {
       seconds = 0;
       minutes++;
-      console.log("minutes");
+    //   console.log("minutes");
       secondsElement.innerText = seconds.toString().padStart(2, "0");
       minutesElement.innerText = minutes.toString().padStart(2, "0");
     }
@@ -41,23 +41,23 @@ const handleStartButtonClick = () => {
 const handleStopButtonClick = () => {
   stopButton.classList.add("hidden");
   startButton.classList.remove("hidden");
-  localStorage.setItem("minutes", minutesElement);
-  localStorage.setItem("seconds", secondsElement);
+//   localStorage.setItem("minutes", minutesElement);
+//   localStorage.setItem("seconds", secondsElement);
   clearInterval(intervalID);
 };
 
 startButton.addEventListener("click", handleStartButtonClick);
 stopButton.addEventListener("click", handleStopButtonClick);
 
-const saveMinutes = localStorage.getItem("minutes");
-const saveSeconds = localStorage.getItem("seconds");
+// const saveMinutes = localStorage.getItem("minutes");
+// const saveSeconds = localStorage.getItem("seconds");
 
-if ((saveMinutes !== null) & (saveSeconds !== null)) {
-  if ((minutes === 0) & (seconds === 0)) {
-    minutesElement.innerText = minutes + "0";
-    secondsElement.innerText = seconds + "0";
-  } else {
-    minutesElement.innerText = minutes;
-    secondsElement.innerText = seconds;
-  }
-}
+
+//   if ((minutes === 0) & (seconds === 0)) {
+//     minutesElement.innerText = minutes + "0";
+//     secondsElement.innerText = seconds + "0";
+//   } else {
+//     minutesElement.innerText = minutes;
+//     secondsElement.innerText = seconds;
+//   }
+
